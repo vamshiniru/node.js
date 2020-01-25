@@ -46,8 +46,8 @@
             steps {
                 echo "uploading to ECR "
                 sh '$(aws ecr get-login --no-include-email --region ap-southeast-1)'
-                sh 'docker tag javaimage:latest 110658654418.dkr.ecr.ap-northeast-1.amazonaws.com/myecr:latest'
-                sh 'docker push 110658654418.dkr.ecr.ap-northeast-1.amazonaws.com/myecr:latest'
+                sh 'docker tag myecr:latest 937382548142.dkr.ecr.ap-south-1.amazonaws.com/myecr:latest'
+                sh 'docker push 937382548142.dkr.ecr.ap-south-1.amazonaws.com/myecr:latest'
             }
         }
         
