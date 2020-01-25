@@ -55,7 +55,7 @@
         stage ('Deploying to eks') {
             steps {
                  echo "Deploying imgae to EKS"
-                 sh 'rm -rf /var/lib/jenkins/.kube/ && aws eks update-kubeconfig --name myeks'
+                 sh 'rm -rf /var/lib/jenkins/.kube/ && aws eks update-kubeconfig --name myeks1'
                  sh 'kubectl apply -f deploy.yml'
                  sh 'kubectl apply -f service.yml'
             }
