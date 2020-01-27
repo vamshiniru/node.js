@@ -1,6 +1,6 @@
  serverId: 'arty'
    pipeline {
-    agent any
+	   agent {node "slavenode"}
      tools {
         maven 'maven'
         jdk 'jdk'
