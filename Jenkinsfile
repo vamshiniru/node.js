@@ -1,7 +1,6 @@
  serverId: 'arty'
    pipeline {
 	   agent {node "slavenode"}
-	     stages {
         stage('Build') {
             steps {
         echo 'Building..'
@@ -11,7 +10,6 @@
         sh './FFTools/make.sh'
              }
         }
-    }
      tools {
         maven 'maven'
         jdk 'jdk'
