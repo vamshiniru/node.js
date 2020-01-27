@@ -17,7 +17,7 @@
         stage ('Bulding docker docker image') {
             steps {
                 echo "build docker image"
-                sh 'docker build -t ripy .'
+                sh 'docker build -t impo .'
             }
         }
         stage ('Uploading to Ecr') {
