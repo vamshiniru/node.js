@@ -1,6 +1,17 @@
  serverId: 'arty'
    pipeline {
 	   agent {node "slavenode"}
+	     stages {
+        stage('Build') {
+            steps {
+        echo 'Building..'
+        sh 'make clean'
+        sh 'export USE_CCACHE=1'
+        sh 'export CCACHE_DIR=/nvme/.ccache'
+        sh './FFTools/make.sh'
+             }
+        }
+    }
      tools {
         maven 'maven'
         jdk 'jdk'
