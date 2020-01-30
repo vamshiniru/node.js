@@ -39,14 +39,14 @@ serverId: 'arty'
 	        stage('Build Docker Image') {
              steps {
                echo 'Building Docker image'
-               sh 'docker build -t test .'
+               sh 'docker build -t myecr .'
                 }
             }
         stage ('Uploading to Ecr') {
             steps {
                 echo "uploading to ECR "
                 sh '$(aws ecr get-login --no-include-email --region ap-south-1)'
-                sh 'docker tag test:latest 937382548142.dkr.ecr.ap-south-1.amazonaws.com/myecr:latest'
+                sh 'docker tag myecr:latest 937382548142.dkr.ecr.ap-south-1.amazonaws.com/myecr:latest'
                 sh 'docker push 937382548142.dkr.ecr.ap-south-1.amazonaws.com/myecr:latest'
             }
         }
