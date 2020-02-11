@@ -31,14 +31,8 @@ serverId: 'arty'
 	          }
 	        }
 	    
-        stage ('Bulding docker docker image') {
-            steps {
-                echo "build docker image"
-                sh 'docker build -t ripy .'
-            }
-        }
-	        stage('Build Docker Image') {
-             steps {
+	stage('Build Docker Image') {
+           steps {
                echo 'Building Docker image'
                sh 'docker build -t myecr .'
                 }
