@@ -34,7 +34,7 @@ serverId: 'arty'
             steps {
                  echo "Deploying imgae to EKS"
                  sh 'rm -rf /var/lib/jenkins/.kube/ && aws eks update-kubeconfig --name myeks1 --region ap-south-1'
-                 sh 'kubectl apply -f deploy.yml'
+                 sh 'kubectl apply -f deployment.yml'
                  sh 'kubectl apply -f service.yml'
             }
         }
