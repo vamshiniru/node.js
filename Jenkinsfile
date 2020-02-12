@@ -13,23 +13,6 @@ serverId: 'arty'
          sh 'mvn install'
             }
         }
-
-       stage('Deploy Artifacts') { 
-             steps {
-                script {			 
-                     def server = Artifactory.server 'jfrog' 
-                     def uploadSpec = """{
-                       "files": [
-                            {
-                              "pattern": "/var/lib/jenkins/workspace/git-jfrog/target/*.war",
-                              "target": "myrepo/"
-                            }
-                                ]
-                    }"""
-	                server.upload(uploadSpec)
-	            }
-	          }
-	        }
 	    
 	stage('Build Docker Image') {
            steps {
